@@ -1,22 +1,22 @@
 # this example assumes that Databricks and Tecton are deployed to the same account
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
 }
 
 locals {
-  deployment_name = "my-deployment-name"
-  region          = "us-west-2"
-  account_id      = "123456789"
+  deployment_name = "locals"
+  region          = "us-east-1"
+  account_id      = "476964136024"
 
   # Name of role and instance profile used by Databricks
-  spark_role_name             = "my-spark-role-name"
-  spark_instance_profile_name = "my-spark-instance-profile-name"
+  spark_role_name             = "db-c5ef34f5e29606682e600455d6fea1c8-iam-role"
+  spark_instance_profile_name = "databricks-instance-profile"
 
-  databricks_workspace = "mycompany.cloud.databricks.com"
+  databricks_workspace = "dbc-d21f6fa6-61ef.cloud.databricks.com"
 
   # Get from your Tecton rep
-  tecton_assuming_account_id = "123456789"
+  tecton_assuming_account_id = "153453085158"
 }
 
 resource "random_id" "external_id" {
